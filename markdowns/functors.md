@@ -24,12 +24,24 @@ So why don't we create our own functor?
 @[The Tuple Functor]({ "stubs": ["functors/tuple.js"], "command": "node functors/tuple.js" })
 
 # Monads
-Let's start with an exercise: let's write a function that duplicates every item in an array (e.g. [1,2,3] --> [1,1,2,2,3,3]).  
+Let's start with an exercise: let's write a function that duplicates every item in an array (e.g. `[1,2,3]` --> `[1,1,2,2,3,3]`).  
 Let's first try with map:
 @[map implementation]({ "stubs": ["functors/duplicateMap.js"], "command": "node functors/duplicateMap.js" })
 
-Running the code you see that the result is not quite what we wanted: [[1,1],[2,2],[3,3]], wouldn't it be great if we had a function that automatically "flattened" the array we returned into [1,1,2,2,3,3]? That's `flatMap`!
+Running the code you see that the result is not quite what we wanted: `[[1,1],[2,2],[3,3]]`, wouldn't it be great if we had a function that automatically "flattened" the array we returned into `[1,1,2,2,3,3]`? That's `flatMap`!
 
 @[flatMap implementation]({ "stubs": ["functors/duplicateFlatMap.js"], "command": "node functors/duplicateFlatMap.runner.js" })
 
 > The `flatMap` function was implemented by me, because it's not provided by javascript [yet](https://tc39.github.io/proposal-flatMap/); we'll deal with the details later.
+
+As you can see flatMap's callback returns another monad and flatMap's job is handling the unpacking.  
+Although array's implementation of `flatMap` is very interesting and useful it's not the only one: we can for example use flatMap to maintain knowledge of previous states of a system, as always let's start with an example.
+
+## Gambler Monad
+Let's say we want to create a model for a gambler: the gambler plays multiple times at the roulette, sometimes he wins and sometimes he loses, but if he goes bankrupt he gets kicked out of the casino and cannot recover. We want to simulate a number of games and see if at the end the gambler still has money or not.
+
+We cannot simply add up wins and losses, because we would ignore intermediate states. The following is a wrong solution:
+@[map implementation]({ "stubs": ["functors/wrongGambler.js"], "command": "node functors/wrongGambler.js" })
+
+What we need is a model that stops computing the transactions after he went bankrupt, like the following:
+@[map implementation]({ "stubs": ["functors/correctGambler.js"], "command": "node functors/correctGambler.js" })
