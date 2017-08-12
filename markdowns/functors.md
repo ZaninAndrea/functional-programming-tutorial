@@ -24,6 +24,7 @@ So why don't we create our own functor?
 @[The Tuple Functor]({ "stubs": ["functors/tuple.js"], "command": "node functors/tuple.js" })
 
 # Monads
+## Array Monad
 Let's start with an exercise: let's write a function that duplicates every item in an array (e.g. `[1,2,3]` --> `[1,1,2,2,3,3]`).  
 Let's first try with map:
 @[map implementation]({ "stubs": ["functors/duplicateMap.js"], "command": "node functors/duplicateMap.js" })
