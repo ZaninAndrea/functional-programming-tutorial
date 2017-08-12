@@ -1,8 +1,23 @@
-title : Basic template
+title : Practical introduction to Functional Programming with JS
 
-# Table of content
+# Table of contents
 plan:
-  - title: Welcome # Set the page title (only displayed if your contribution has several pages)
-    statement: markdowns/welcome.md # Set the file path to the page content
-#  - title: Another Page
-#    statement: markdowns/another-page.md
+  - title: Pure Functions # Set the page title
+    statement: markdowns/pure.md # Set the file path to the page content
+  - title: Higher Order Functions
+    statement: markdowns/higher.md
+  - title: Currying
+    statement: markdowns/currying.md
+  - title: Recursion
+    statement: markdowns/recursion.md
+  - title: Functors
+    statement: markdowns/functors.md
+
+# Settings for your programming projects and the associated Docker images
+projects:
+  nodejs:
+    root: "/nodejs-project"
+    # Set the docker image. This image runs mocha tests using this syntax:
+    # @[Code Editor Title]({"stubs": ["EditorFile1.js", "EditorFile2.js", ...], "command": "node_modules/mocha/bin/mocha TestFile.js --reporter list"})
+    # More details here: https://github.com/TechDotIO/node-npm-runner
+    runner: techio/node-npm-runner:latest

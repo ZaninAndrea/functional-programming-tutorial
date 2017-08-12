@@ -1,0 +1,11 @@
+{
+  "name": "nodejs-functional-programming",
+  "version": "1.0.0",
+  "description": "Functional programming introduction",
+  "author": "Zanin Andrea",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^3.4.2",
+    "underscore": "^1.8.3"
+  }
+}
