@@ -30,5 +30,6 @@ Let's first try with map:
 
 Running the code you see that the result is not quite what we wanted: [[1,1],[2,2],[3,3]], wouldn't it be great if we had a function that automatically "flattened" the array we returned into [1,1,2,2,3,3]? That's `flatMap`!
 
-@[flatMap implementation]({ "stubs": ["functors/duplicateFlatMap.js"], "command": "node functors/duplicateFlatMap.runner.js" })  
+@[flatMap implementation]({ "stubs": ["functors/duplicateFlatMap.js"], "command": "node functors/duplicateFlatMap.runner.js" })
+
 > The `flatMap` function was implemented by me, because it's not provided by javascript [yet](https://tc39.github.io/proposal-flatMap/); we'll deal with the details later.
