@@ -54,5 +54,5 @@ find = element =>
                     }
                 };
 
-console.log("paper.pdf > "+find("paper.pdf")(tree));
-console.log("randomfile > "+find("randomfile")(tree));
+console.log("paper.pdf: "+find("paper.pdf")(tree));
+console.log("randomfile: "+find("randomfile")(tree));
