@@ -46,3 +46,5 @@ We cannot simply add up wins and losses, because we would ignore intermediate st
 
 What we need is a model that stops computing the transactions after he went bankrupt, like the following:
 @[map implementation]({ "stubs": ["functors/correctGambler.js"], "command": "node functors/correctGambler.js" })
+
+This time we used `flatMap` to remember past states, but again the callback returned a new monad and `flatMap` handled the unwrapping of the original monad content.

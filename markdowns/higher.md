@@ -12,18 +12,18 @@ As you can see the function `isEven` doesn't need to include the logic to handle
 
 Let's try to implement our first piece of logic for the amazon cart: extracting from the `cart` array all the prime items
 
-@[Implement `isPrime` and `primeItems`, for the latter use `filter`]({ "stubs": ["higher/isPrime.js"], "command": "node_modules/mocha/bin/mocha higher/isPrime.spec.js --reporter list",  "layout": "aside" })
+@[Implement `isPrime` and `primeItems`, for the latter use `filter`. The file is on the right]({ "stubs": ["higher/isPrime.js"], "command": "node_modules/mocha/bin/mocha higher/isPrime.spec.js --reporter list",  "layout": "aside" })
 
 # Reject
 We can now reuse the `isPrime` function in conjunction with `reject` to get all the non-prime items in the cart. The reject function is the **opposite of the filter**: it creates an array with all the elements but those that satisfy the condition.  
 
-Reject is not a built-in function in js, we are going to use the library `underscore.js` to have it. The syntax is slightly different: `_.reject(list, predicate)` where `_` is the underscore library
+Reject is not a built-in function in js, we are going to use the library `underscore.js` to have it. The syntax is slightly different: `_.reject(list, testFunction)` where `_` is the underscore library
 
-@[Implement the `notPrimeItems` function using `reject` (you can use functions defined in the other snippets)]({ "stubs": ["higher/isNotPrime.js", "higher/isPrime.js"], "command": "node_modules/mocha/bin/mocha higher/isNotPrime.spec.js --reporter list" , "layout": "aside" })
+@[Implement the `notPrimeItems` function using `reject` (you can use functions defined in the previous snippet)]({ "stubs": ["higher/isNotPrime.js", "higher/isPrime.js"], "command": "node_modules/mocha/bin/mocha higher/isNotPrime.spec.js --reporter list" , "layout": "aside" })
 
 As an optional exercise you could also implement reject yourself using filter.
 
-@[Implement the `reject` function using `reject`]({ "stubs": ["higher/implementReject.js"], "command": "node_modules/mocha/bin/mocha higher/implementReject.spec.js --reporter list"})
+@[Implement the `reject` function using `filter`]({ "stubs": ["higher/implementReject.js"], "command": "node_modules/mocha/bin/mocha higher/implementReject.spec.js --reporter list"})
 
 # Lambda functions
 When defining short functions it's often convenient to use an alternative syntax called lambda function, that allows us to define anonymous functions in a more compact way: `( /*arguments*/ ) => { /*code*/ }` and if our function is only a return statement we can strip the curly brackets and avoid writing `return`: `( /*arguments*/ ) => /*value to return*/`.
@@ -46,11 +46,12 @@ Now back to our amazon example: we can use `map` to apply a coupon. The `applyCo
 
 # Reduce: one function to rule them all
 Reduce is the last higher order function we are going to discuss and it's also the most powerful: in fact you can implement **any list transformation** with reduce.  
-Reduce takes in a callback function and a starting value, the function takes as arguments an accumulator and the value of the current element of the array and returns the accumulator to be used in the next cycle. The value returned from the last call of the callback function is the value returned by `reduce`.
+Reduce takes in a callback function and a starting value, the callback function takes as arguments an accumulator and the value of the current element of the array and returns the accumulator to be used in the next cycle. The value returned from the last call of the callback function is the value returned by `reduce`.
 
 It's easier if I show you some examples:
 
 @[Multiplying all the elements of an array]({ "stubs": ["higher/multiply.js"], "command": "node higher/multiply.js"})
+@[Filtering only even numbers]({ "stubs": ["higher/isEvenReduce.js"], "command": "node higher/isEvenReduce.js"})
 @[Implementing map with reduce]({ "stubs": ["higher/implementMap.js"], "command": "node higher/implementMap.js"})
 
 Now to complete our amazon workflow write a function that returns the total cost of the order.
