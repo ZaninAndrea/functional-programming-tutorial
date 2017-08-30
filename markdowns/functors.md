@@ -52,5 +52,5 @@ What we need is a model that stops computing the transactions after he went bank
 
 This time we used `flatMap` to remember past states, but again the callback returned a new monad and `flatMap` handled the unwrapping of the original monad content.
 
-## The essence of the monad
+## Wrapping up
 Monads are a broad definition, but they all share one characteristic: they implement `flatMap`, which in term is useful to maintain knowledge of the **context** in which a function is being executed.

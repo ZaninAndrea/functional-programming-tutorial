@@ -4,10 +4,12 @@ As a reference, here are the topics we'll talk about:
 - Higher Order Functions
 - Currying
 - Recursion
+- Functors
+- Monads
 
 You need to know basic JavaScript usage, if you never programmed in JavaScript you can checkout [this quick intro](https://learnxinyminutes.com/docs/javascript/) and come back, I'll wait for you.
 
-Open Source is <3, so here is the [repository](https://github.com/ZaninAndrea/playground-przgjbPq) for this playground, feel free to contribute
+Open Source is <3, so here is the [repository](https://github.com/ZaninAndrea/playground-przgjbPq) for this playground, feel free to contribute, clone, 
 
 # Pure Functions  
 I admit it, I lied to you: we need a tiny bit of theory to get started.  

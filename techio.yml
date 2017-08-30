@@ -10,8 +10,10 @@ plan:
     statement: markdowns/currying.md
   - title: Recursion
     statement: markdowns/recursion.md
-  - title: Functors
+  - title: Functors and Monads
     statement: markdowns/functors.md
+  - title: Conclusion
+    statement: markdowns/conclusion.md
 
 # Settings for your programming projects and the associated Docker images
 projects:
