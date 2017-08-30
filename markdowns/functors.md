@@ -28,15 +28,17 @@ Giving a definition of monad is somewhat tedious and requires a bit of theory, s
 ## Array Monad
 Let's write a function that duplicates every item in an array (e.g. `[1,2,3]` --> `[1,1,2,2,3,3]`).  
 Let's first try with map:
-@[map implementation]({ "stubs": ["functors/duplicateMap.js"], "command": "node functors/duplicateMap.js" })
+@[map duplicate]({ "stubs": ["functors/duplicateMap.js"], "command": "node functors/duplicateMap.js" })
 
 Running the code you see that the result is not quite what we wanted: `[[1,1],[2,2],[3,3]]`, wouldn't it be great if we had a function that automatically "flattened" the array we returned into `[1,1,2,2,3,3]`? That's `flatMap`!
 
-@[flatMap implementation]({ "stubs": ["functors/duplicateFlatMap.js"], "command": "node functors/duplicateFlatMap.runner.js" })
+@[flatMap duplicate]({ "stubs": ["functors/duplicateFlatMap.js"], "command": "node functors/duplicateFlatMap.runner.js" })
 
 > The `flatMap` function was implemented by me, because it's not provided by javascript [yet](https://tc39.github.io/proposal-flatMap/); we'll deal with the details later.
 
-As you can see flatMap's callback returns another monad and flatMap's job is handling the unpacking.  
+As you can see flatMap's callback returns another monad and flatMap's job is handling the unpacking. If you are interested in the details of the implementation here's my code:
+@[flatMap implementation]({ "stubs": ["functors/flatMapImplementation.js"], "command": "node functors/flatMapImplementation.js" })
+
 Although array's implementation of `flatMap` is very interesting and useful it's not the only one: we can for example use flatMap to maintain knowledge of previous states of a system, as always let's start with an example.
 
 ## Gambler Monad
@@ -49,3 +51,6 @@ What we need is a model that stops computing the transactions after he went bank
 @[map implementation]({ "stubs": ["functors/correctGambler.js"], "command": "node functors/correctGambler.js" })
 
 This time we used `flatMap` to remember past states, but again the callback returned a new monad and `flatMap` handled the unwrapping of the original monad content.
+
+## The essence of the monad
+Monads are a broad definition, but they all share one characteristic: they implement `flatMap`, which in term is useful to maintain knowledge of the **context** in which a function is being executed.
