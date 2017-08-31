@@ -1,15 +1,15 @@
 # Recursion
-A recursive function is a function that **calls itself** until it hits a **base case**, this is often used in recursive languages as a replacement for loops, because it is **far more flexible**. They key here is that each time the function calls itself the problem is reduced.
+A recursive function is a function that **calls itself** until it hits a **base case**. This is often used in recursive languages as a replacement for loops, because it is **far more flexible**. They key here is that each time the function calls itself, the problem is reduced.
 
-Just to understand the concept let's implement a countdown as a recursive function:
+Just to understand the concept, let's implement a countdown as a recursive function:
 
 @[Countdown]({ "stubs": ["recursion/countdown.js"], "command": "node recursion/countdown.js" })
 
-Recursion is much more powerful than loops, for example they are very useful to implement any algorithm of the "divide and conquer" family; we'll implement a simple algorithm that tells us whether a file is in a directory or in it's sub-directories.
+Recursion is much more powerful than loops; for example, they are very useful to implement any algorithm of the "divide and conquer" family. We'll implement a simple algorithm that tells us whether a file is in a directory or in sub-directories.
 
 @[Finding a file]({ "stubs": ["recursion/tree.js"], "command": "node recursion/tree.js" })
 
-In this tiny example we used recursion, currying, higher order function and lambda expressions, which is nice per se, but most importantly we solved a problem that is unsolvable using only loops.
+In this tiny example, we used recursion, currying, higher order function and lambda expressions, which is nice per se, but most importantly, we solved a problem that is unsolvable using only loops.
 
 And now an exercise for you: from a list of `{id,parent}` objects you have to create the original structure. You can assume that every object has a unique id.  
 E.g. this list
@@ -50,6 +50,6 @@ should become this
 }
 ```
 
-> **Hint:** the subtrees are smaller version of the treeBuilding problem, can you figure out what the base case is?
+> **Hint:** the subtrees are smaller versions of the treeBuilding problem, can you figure out what the base case is?
 
 @[Finding a file]({ "stubs": ["recursion/buildTree.js"], "command": "node_modules/mocha/bin/mocha recursion/buildTree.spec.js --reporter list" })
