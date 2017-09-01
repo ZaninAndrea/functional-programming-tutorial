@@ -13,7 +13,7 @@ myFunctor.map( x => x) === myFunctor
 myFunctor.map( x => f(g(x)) ) === myFunctor.map(g).map(f)
 ```
 
-> In the code above, I used `===` to keep it simple, but I should have checked for deep equality. If you don't know what this means, don't worry, you should be able to understand the meaning anyway. Nonetheless, if you want to learn more about it, [this](https://stackoverflow.com/questions/1068834/object-comparison-in-javascript) stackoverflow thread is a good place to start.
+> In the code above, I used `===` to keep it simple, but I should have checked for deep equality. If you don't know what this means, don't worry, you should be able to understand the meaning anyway. Nonetheless, if you want to learn more about it, [this](https://stackoverflow.com/questions/1068834/object-comparison-in-javascript) StackOverflow thread is a good place to start.
 
 The advantage of using a functor is that the container is now abstracted away. E.g., in streams, we don't need to care about asynchronous data handling, we can just use a stream like an array.
 
