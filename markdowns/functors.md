@@ -3,7 +3,7 @@ Remember when we talked about `map`? We only used map on arrays, but you can act
 
 **Any type that has a map function is a functor.**
 
-You should have understood the concept of map by now, but if you a real nitpicker, you will now ask "How do we define map?". One of the best definitions is given by [haskell's functor laws](https://wiki.haskell.org/Functor); for the interested people, I will translate them into JavaScript:
+You should have understood the concept of map by now, but if you a real nitpicker, you will now ask "How do we define map?". One of the best definitions is given by [haskell's functor laws](https://wiki.haskell.org/Functor); for those of you who are interested, I will translate them into JavaScript:
 
 ```
 // identity
