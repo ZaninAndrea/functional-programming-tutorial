@@ -59,7 +59,7 @@ describe('applyCoupon', function() {
           "category": "food",
           "price": 1.8
         }
-      assert(Math.abs(applyCoupon2.applyCoupon("food")(0.1)(test3).price - solution3.price)<0.01)
+      assert(Math.abs(applyCoupon2.applyCoupon("food")(0.9)(test3).price - solution3.price)<0.01)
 
     } catch (error) {
       printMessage('Hint 💡', 'You can check the property `price` to find out its price');
