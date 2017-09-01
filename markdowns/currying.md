@@ -10,7 +10,18 @@ So why is this useful? Because we are now able to pass the arguments at **differ
 E.g.
 @[Generic filter callback to check any property of an object]({ "stubs": ["currying/example2.js"], "command": "node currying/example2.js" })
 
-And now, time to get your hands dirty: remember the `applyCoupon` function we wrote in the previous chapter? It was very specific; now we want to create a curryable function that takes as arguments (in this order) category, discount between 0 and 1 (0.8 = 80% discount) and an item, and that returns the item with the correct price.  
+And now, time to get your hands dirty: remember the `applyCoupon` function we wrote in the previous chapter? It was very specific; now we want to create a curryable function that takes as arguments (in this order) category, discount between 0 and 1 (a 2$ item with a 0.1 discount will cost 1.8$) and an item, and that returns the item with the correct price.  
+E.g.
+```js
+const item = {
+           "name": "Biscuits",
+           "type": "regular",
+           "category": "food",
+           "price": 2.0
+         }
+         
+applyCoupon("food")(0.1)(item).price === 1.8
+```
 Remember to apply the discount only to the right items!
 
 @[Implement `applyCoupon` as a curriable function]({ "stubs": ["currying/applyCoupon2.js"], "command": "node_modules/mocha/bin/mocha currying/applyCoupon2.spec.js --reporter list"})
