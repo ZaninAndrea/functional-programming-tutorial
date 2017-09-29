@@ -53,3 +53,5 @@ should become this
 > **Hint:** the subtrees are smaller versions of the treeBuilding problem, can you figure out what the base case is?
 
 @[Finding a file]({ "stubs": ["recursion/buildTree.js"], "command": "node_modules/mocha/bin/mocha recursion/buildTree.spec.js --reporter list" })
+
+As this problem is harder that usual I provided the solution [here](https://gist.github.com/ZaninAndrea/d0b1fd65cf763bbb2db8f3095cc90ae2)
